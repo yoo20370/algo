@@ -1,0 +1,15 @@
+N, M = map(int, input().split())
+
+basket = [i + 1 for i in range(N)]
+
+for i in range(M) :
+    S, E = map(int, input().split())
+    S -= 1
+    E -= 1
+
+    size = (E - S + 1) // 2
+    for i in range(size) :
+        basket[S + i], basket[E - i] = basket[E - i], basket[S + i]
+
+for i in basket :
+    print(i, end=" ")           

@@ -1,4 +1,3 @@
-
 try :
     while True :
         A, B = map(int, input().split())

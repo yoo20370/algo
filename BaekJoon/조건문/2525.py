@@ -5,8 +5,7 @@ def finishTime(hour, minute, time) :
         if minute >= 60 :
             hour += 1
             minute -= 60
-        
-    
+
     if hour >= 24 :
         hour = hour - 24
 
