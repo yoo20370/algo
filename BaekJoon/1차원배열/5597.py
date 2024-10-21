@@ -9,5 +9,3 @@ for i in range(S) :
 for i in range(T) :
     if stuList[i] == False :
         print(i+1)
-        
-
