@@ -11,6 +11,5 @@ for i in range(length) :
     else : 
         curr = ord(curr) - 55 
     
-    print(curr, B, i)
     sum += curr * int(B)**i
 print(sum)

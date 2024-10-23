@@ -13,9 +13,9 @@ def checkWord(string) :
 
     return 1
 
-ctn = 0
+cnt = 0
 for i in range(N) :
     data = input()
-    ctn += checkWord(data)
+    cnt += checkWord(data)
 
-print(ctn)
+print(cnt)
