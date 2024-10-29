@@ -9,4 +9,3 @@ data = list(map(int, input().split()))
 
 data = sortReverse(data)
 print(data[K-1])
-
