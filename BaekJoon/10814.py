@@ -9,4 +9,4 @@ for i in range(N) :
 listA.sort(key = lambda x : x[0])
 
 for a, b in listA :
-    print(a, b)
+    print(a,b)
