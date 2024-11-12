@@ -20,7 +20,7 @@ if X + Y + Z != 180 :
 else :
     if X == Y == Z :
         print("Equilateral")
-    elif X != Y != Z :
-        print("Scalene")
-    else :
+    elif X == Y or Y == Z or X == Z :
         print("Isosceles")
+    else :
+        print("Scalene")

@@ -58,20 +58,7 @@ print(func(N))
 # else:
 #     print(0)
 
-# # 다른 사람 2
-# n = int(input())
-# result = None
-# placesSum = sum(map(int, list(str(n))))
-# for i in range(max(1, n - (len(str(n)) * 9)), n):
-#     if sum(map(int, list(str(i)))) + i == n:
-#         result = i
-#         break
-# if result is None:
-#     print(0)
-# else:
-#     print(result)
-
-# # 다른 사람 3
+# # 다른 사람 2 - 당신 고트
 # N = int(input())
 # s = max(N - 63, 1)
 # for n in range(s,N):
