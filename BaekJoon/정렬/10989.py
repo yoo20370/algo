@@ -1,6 +1,5 @@
 import sys 
 
-
 listA = [0] * 10001
 
 N = int(sys.stdin.readline())
