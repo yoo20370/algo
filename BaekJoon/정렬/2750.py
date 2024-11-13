@@ -1,32 +1,32 @@
-def quickSort(listA) :
+def quick(arr, left, right) :
 
-    if len(listA) <= 1 :
-        return listA
+    pl = left
+    pr = right
+    p = arr[(left + right) // 2]
 
-    left = 0
-    p = len(listA) // 2 
-    right = len(listA) - 1
+    while pl <= pr :
+        while arr[pl] < p :
+            pl += 1
+        while p < arr[pr] :
+            pr -= 1
+        
+        if pl <= pr :
+            arr[pl], arr[pr] = arr[pr], arr[pl]
+            pl += 1
+            pr -= 1
+    
+    if left < pr :
+        quick(arr, left, pr) 
+    if pl < right :
+        quick(arr, pl, right)
 
-
-    leftList = list()
-    midList = list()
-    rightList = list()
-
-    for i in listA :
-        if i < listA[p] :
-            leftList.append(i)
-        elif i > listA[p] :
-            rightList.append(i)
-        else :
-            midList.append(i)
-
-    return quickSort(leftList) + midList + quickSort(rightList)
 N = int(input())
 
-listA = list()
+data = list()
 for i in range(N) :
-    listA.append(int(input()))
-listA = quickSort(listA)
+    data.append(int(input()))
 
-for i in listA :
+quick(data, 0, len(data) - 1)
+
+for i in data :
     print(i)
