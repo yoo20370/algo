@@ -16,7 +16,7 @@
 #     func(i)
 
 def func(hashTable, hashVal, i) :
-    hashVal = i % 10000
+    hashVal = i % 100000
     for j in hashTable[hashVal] :
         if i == j :
             return 1
@@ -24,17 +24,19 @@ def func(hashTable, hashVal, i) :
 
 import sys 
 
-hashTable = [[] for i in range(10000)]
+hashTable = [[] for i in range(100000)]
 
 N = int(sys.stdin.readline().rstrip())
 for i in list(map(int, sys.stdin.readline().split())) :
-    hashVal = i % 10000
+    hashVal = i % 100000
     hashTable[hashVal].append(i)
 
 M = int(sys.stdin.readline().rstrip())
 for i in list(map(int, sys.stdin.readline().split())) :
-    hashVal = i % 10000
+    hashVal = i % 100000
     print(func(hashTable, hashVal, i), end= " ")
+
+## 이진 탐색으로도 풀 수 있다. 
 
 
     
