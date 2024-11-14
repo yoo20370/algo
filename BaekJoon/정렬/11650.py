@@ -47,4 +47,5 @@ for i in range(N) :
 
 data.sort(key = lambda x :(x[0], x[1]))
 
-print(data)
+for x, y in data :
+    print(x, y)

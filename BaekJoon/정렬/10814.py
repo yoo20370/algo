@@ -24,7 +24,6 @@ arr = list()
 for i in range(N) :
     x, y = input().split()
     arr.append([int(x), y, i])
-print(arr)
 
 quick(arr, 0, len(arr)-1, 0)
 
