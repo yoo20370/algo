@@ -46,17 +46,3 @@ print(cnt)
 
 
 
-# 다른 사람의 코드 elroy0920 사람의 코드 
-# import sys
-
-# input=sys.stdin.readline
-# n,m = map(int, input().split())
-# S = set()
-# for i in range(n):
-#     S.add(input())
-# ans = 0
-# for _ in range(m):
-#     t = input()
-#     if t in S:
-#         ans += 1
-# print(ans)

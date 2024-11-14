@@ -38,5 +38,21 @@ for i in list(map(int, sys.stdin.readline().split())) :
 
 ## 이진 탐색으로도 풀 수 있다. 
 
+# elroy0920 사람의 코드 
+# import sys
 
+# n = int(sys.stdin.readline())
+# cards = list(map(int, sys.stdin.readline().split()))
+# m = int(sys.stdin.readline())
+# checks = list(map(int, sys.stdin.readline().split()))
+
+# _dict = {}
+# for i in range(len(cards)):
+#     _dict[cards[i]] = 0
+
+# for j in range(m):
+#     if checks[j] not in _dict:
+#         print(0, end=' ')
+#     else:
+#         print(1, end=' ')
     

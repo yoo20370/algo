@@ -7,7 +7,7 @@ def quick(arr, left, right, option) :
    while pl <= pr :
       compl = arr[pl][option]
       compr = arr[pr][option]
-      while compl < p :
+      while compl < p : 
          pl += 1
          compl = arr[pl][option]
       while p < compr :
@@ -21,7 +21,7 @@ def quick(arr, left, right, option) :
 
    if left < pr :
       quick(arr, left, pr, option)
-      
+
    if pl < right :
       quick (arr, pl, right, option)
 
