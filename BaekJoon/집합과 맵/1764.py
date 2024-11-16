@@ -37,3 +37,21 @@ resultList.sort()
 for i in resultList :
     print(i)
 
+# set 연산자 
+# import sys
+# N, M = map(int, sys.stdin.readline().split())
+
+# A = set()
+# B = set()
+# for _ in range(N):
+#     A.add(input())
+# for _ in range(M):
+#     B.add(input())
+
+# len_result = A&B
+# result = list(len_result)
+# result.sort()
+# print(len(len_result))
+# for i in range(len(len_result)):
+#     print(result[i])
+
