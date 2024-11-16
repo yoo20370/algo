@@ -10,7 +10,7 @@ for i in range(1, len(string) + 1) :
     for j in range(0,len(string) - i + 1) :
         setA.add(string[j:j+i])
 
-print(setA)
+print(len(setA))
 
 
 
