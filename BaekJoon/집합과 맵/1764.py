@@ -6,12 +6,12 @@ def binarySearch(arr, key) :
 
     while pl <= pr :
         mid = (pl + pr) // 2
-        if arr[pl] < key :
+        if arr[mid] < key :
             pl = mid + 1
-        elif key < arr[pr] :
+        elif key < arr[mid] :
             pr = mid - 1
         else :
-            return key
+            return arr[mid]
     return -1
 
 N, M = map(int, input().split())
@@ -30,9 +30,10 @@ for i in range(M) :
     if result != -1 :
         resultList.append(result)
 
+# resultList.append(str(len(resultList)))
 resultList.sort()
 
-print(len(resultList))
+
 for i in resultList :
     print(i)
 
