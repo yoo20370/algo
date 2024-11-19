@@ -1,3 +1,5 @@
+## 다시 풀어봐야할 것 같다. 차근차근 천천히 풀어보자 
+
 import sys, math
 
 N = int(sys.stdin.readline())
@@ -36,15 +38,39 @@ else :
 maxVal = max(dic.keys())
 minVal = min(dic.keys())
 
-# 범위값 
-degree = abs(maxVal - minVal)
+# # 범위값 
+# degree = abs(maxVal - minVal)
 
-print(avg)
-print(mid)
-print(minCnt)
-print(degree)
+# print(avg)
+# print(mid)
+# print(minCnt)
+# print(degree)
 
+# #
+# import sys
+# from collections import Counter
 
+# input = sys.stdin.read
+# data = input().split()
+
+# N = int(data[0])
+# numbers = list(map(int, data[1:N+1]))
+
+# mean = round(sum(numbers) / N)
+# numbers.sort()
+# median = numbers[N // 2]
+
+# counter = Counter(numbers)
+# modes = [k for k, v in counter.items() if v == max(counter.values())]
+# modes.sort()
+# mode = modes[0] if len(modes) == 1 else modes[1]
+
+# range_value = max(numbers) - min(numbers)
+
+# print(mean)
+# print(median)
+# print(mode)
+# print(range_value)
 
 
 
