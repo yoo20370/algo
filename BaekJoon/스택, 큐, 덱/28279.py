@@ -1,8 +1,6 @@
 from collections import deque
 import sys
 
-
-
 def appendleft(arr, x) :
     arr.appendleft(x)
 
