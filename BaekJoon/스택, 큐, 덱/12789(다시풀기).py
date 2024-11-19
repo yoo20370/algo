@@ -1,3 +1,4 @@
+# 문제를 잘못 이해해서 틀린 것 같음 
 import sys
 from collections import deque
 
@@ -34,9 +35,25 @@ def dokey(n) :
         
     return "Nice"
 
-print(dokey(N))
-    
+# print(dokey(N))
 
+# 정답 코드 
+# def dokey(n):
+#     dequeue = deque(map(int, sys.stdin.readline().split()))
+#     stack = []
+#     passNum = 1
 
+#     while dequeue or stack:
+#         if dequeue and dequeue[0] == passNum:
+#             dequeue.popleft()
+#             passNum += 1
+#         elif stack and stack[-1] == passNum:
+#             stack.pop()
+#             passNum += 1
+#         elif dequeue:
+#             stack.append(dequeue.popleft())
+#         else:
+#             return "Sad"
 
+#     return "Nice"
 
