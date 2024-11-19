@@ -1,36 +1,35 @@
 import sys
 
-def check(s) :
-    p1 = 0
-    p2 = 0
+def check(string) :
 
-    for i in s :
-        if i == '(' :
-            p1 += 1
-        elif i == ')' :
-            if p1 != 0 :
-                p1 -= 1
+    stack = list()
+    for i in string :
+        if i == "(" :
+            stack.append("(")
+        elif i == "[" :
+            stack.append("[")
+        elif i == ")" :
+            if len(stack) != 0 and stack[len(stack) -1] == "(":
+                stack.pop()
             else :
                 return "no"
-        elif i == '[' :
-            p2 += 1 
-        elif i == ']' :
-            if p2 != 0 :
-                p2 -= 1
+        elif i == "]" :
+            if len(stack) != 0 and stack[len(stack) -1] == "[":
+                stack.pop()
             else :
                 return "no"
-
-    if p1 == 0 and p2 == 0 :
-        return "yes"
-    else :
+    
+    if len(stack) != 0 :
         return "no"
+    else :
+        return "yes"
+            
 
 while True :
     data = sys.stdin.readline().rstrip()
-    if data == '.' :
+    if data == "." :    
         break
-    
+
     print(check(data))
-    
             
 
