@@ -1,75 +1,109 @@
+# import sys
 
+# def merge_sort(arr, pl, pr, tmp) :
+#     if pl < pr :
+#         p = (pl + pr) // 2
+#         merge_sort(arr, pl, p, tmp) 
+#         merge_sort(arr, p + 1, pr, tmp)
+#         merge(arr, pl, p, pr, tmp)
 
-# def merge_sort(arr) :
-
-#     if len(arr) == 1 :
-#         return arr
     
-#     pl = 0
-#     pr = len(arr) - 1
-#     mid = len(arr) // 2
 
-#     left = merge_sort(arr[:mid])
-#     right = merge_sort(arr[mid:])
+# def merge(arr, pl, p, pr, temp) :
+#     i = pl 
+#     j = p + 1
 
-#     l_idx = 0
-#     r_idx = 0
-    
-#     resultList = list()
-#     while l_idx < len(left) and r_idx < len(right) : 
-
-#         if left[l_idx] < right[r_idx] :
-#             resultList.append(left[l_idx])
-#             l_idx += 1
-
+#     tmp = list()
+#     while i <= p and j <= pr :
+#         if arr[i] <= arr[j] :
+            
+#             tmp.append(arr[i])
+#             i += 1
 #         else :
-#             resultList.append(right[r_idx])
-#             r_idx += 1
+            
+#             tmp.append(arr[j])
+#             j += 1
     
-#     resultList.extend(left[l_idx:])
-#     resultList.extend(right[r_idx:])
+#     while i <= p :
+        
+#         tmp.append(arr[i])
+#         i += 1
     
-#     return resultList
+#     while j <= pr :
+        
+#         tmp.append(arr[j])
+#         j += 1
+#     i = pl
+#     t = 0
+    
+#     while i <= pr :
+#         temp.append(tmp[t])
+#         arr[i] = tmp[t]
+#         t += 1
+#         i += 1
 
-def merge(arr, p, q, r) :
-    i = p
-    j = q
-    t = 1
+# N, M = map(int, sys.stdin.readline().split())
+# arr = list(map(int, sys.stdin.readline().split()))
 
-    while i <= q and j <= r :
+# tmp = list()
+# merge_sort(arr, 0, len(arr) - 1, tmp)
+
+# if len(tmp) >= M :
+#     print(tmp[M-1])
+# else :
+#     print(-1)
+
+import sys
+
+def merge_sort(arr, pl, pr, cnt) :
+    if pl < pr :
+        p = (pl + pr) // 2
+        merge_sort(arr, pl, p, cnt) 
+        merge_sort(arr, p + 1, pr, cnt)
+        if 0 == merge(arr, pl, p, pr, cnt) :
+            return 0
+
+    
+
+def merge(arr, pl, p, pr, cnt) :
+    i = pl 
+    j = p + 1
+
+    tmp = list()
+    while i <= p and j <= pr :
         if arr[i] <= arr[j] :
-            arr[t], arr[i] = arr[i], arr[t]
-            t += 1
+            
+            tmp.append(arr[i])
             i += 1
         else :
-            arr[t], arr[j] = arr[j], arr[t]
-            t += 1
+            
+            tmp.append(arr[j])
             j += 1
-    while i <= q :
-        arr[t], arr[i] = arr[i], arr[t]
+    
+    while i <= p :
+        
+        tmp.append(arr[i])
+        i += 1
+    
+    while j <= pr :
+        
+        tmp.append(arr[j])
+        j += 1
+    i = pl
+    t = 0
+    
+    while i <= pr :
+        global M 
+        if cnt == M :
+            print(tmp[t])
+            return 0
+        arr[i] = tmp[t]
         t += 1
         i += 1
-    while j <= r :
-        arr[t], arr[j] = arr[j], arr[t]
-        t += 1
-        j += 1
-    while i <= r :
-        arr[i], arr[t] = arr[t], arr[i]
-        i += 1
-        j += 1
 
-def merge_sort(arr, left, right) :
-    pl = left
-    pr = right
+N, M = map(int, sys.stdin.readline().split())
+arr = list(map(int, sys.stdin.readline().split()))
 
-    if pl < pr :
-        mid = (pl + pr) // 2
-        merge_sort(arr, pl, mid) 
-        merge_sort(arr, mid + 1, pr)
-        merge(arr, pl, mid, pr)
+if 0 != merge_sort(arr, 0, len(arr) - 1, 1) :
+    print(-1)
 
-
-arr = [4,2,3,1]
-
-merge_sort(arr, 0, len(arr)-1)
-print(arr)

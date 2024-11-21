@@ -5,9 +5,9 @@ listA = list(map(int, sys.stdin.readline().split()))
 
 listA.sort()
 result = 0
-sum = 0 
+waitTime = 0 
 for i in listA :
-    sum = sum + i
-    result = result + sum
+    result = result + waitTime + i 
+    waitTime = waitTime + i
 
 print(result)
