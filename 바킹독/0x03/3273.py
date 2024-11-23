@@ -16,4 +16,13 @@ for i in sys.stdin.readline().rstrip() :
         max_idx = int(s)
         max_val = arr[int(i)]
 
-print(max_idx, arr[max_idx])
+if max_idx == 6 :
+    if arr[9] == 0 :
+
+    if max_val % 2 != 0 :
+        max_val += 1
+    
+    
+
+
+
