@@ -20,5 +20,4 @@ while N + 1 != hour :
         minute += 1
 
     hour += 1
-
 print(cnt)
