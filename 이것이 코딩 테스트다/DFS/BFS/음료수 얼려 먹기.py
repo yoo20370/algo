@@ -36,7 +36,6 @@ def bfsIce(start) :
             if  xx > -1 and xx < N and yy > -1 and yy < M and pan[xx][yy] == 0:
                 queue.append((xx,yy))
                 pan[xx][yy] = 1
-    
     return 1
 
 cnt = 0 
