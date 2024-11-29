@@ -22,11 +22,12 @@ def miroEscape(start, end) :
             return pan[currX][currY]
         
         currVal = pan[currX][currY]
-
+        # pan[currX][currY] = 0 
         for x, y in direction :
             dx = currX + x
             dy = currY + y
-
+            
+            # if dx > -1 and dx < N and dy > -1 and dy < M and pan[dx][dy] != 0 :
             if dx > -1 and dx < N and dy > -1 and dy < M and pan[dx][dy] == 1 :
                 pan[dx][dy] = currVal + 1
                 queue.append((dx,dy))
