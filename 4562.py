@@ -6,6 +6,6 @@ for i in range(N) :
     x, y = map(int, sys.stdin.readline().split())
 
     if x >= y :
-        print("MMM BRANIS")
+        print("MMM BRAINS")
     else :
         print("NO BRAINS")
