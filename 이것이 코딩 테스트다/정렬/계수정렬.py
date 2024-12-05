@@ -2,7 +2,6 @@
 def sort(arr) :
     cnt = [0] *(max(arr) + 1)
 
-    
     for i in arr :
         cnt[i] += 1
 
