@@ -34,3 +34,12 @@ for i in range(N) :
 for idx in range(MX) :
     for cnt in range(len(arr[idx][1])) :
         print(arr[idx][1][cnt], end=" ")
+
+# 마지막 공백을 제거하기 위한 코드 
+# # 점수별 이름 출력
+# result = []
+# for idx in range(MX):
+#     result.extend(arr[idx][1])
+
+# # 이름 출력 (공백으로 구분)
+# print(" ".join(result))
