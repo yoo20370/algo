@@ -35,13 +35,13 @@ N = int(sys.stdin.readline().rstrip())
 MX = 1000001
 parts = [0] * MX 
 
-for i in map(int, sys.stdin.readline().split()) :
-    parts[i] += 1
+for part in map(int, sys.stdin.readline().split()) :
+    parts[part] += 1
 
 M = int(sys.stdin.readline().rstrip()) 
 
-for i in map(int, sys.stdin.readline().split()) :
-    if parts[i] == 0 :
+for part in map(int, sys.stdin.readline().split()) :
+    if parts[part] == 0 :
         print("no", end = " ")
     else :
         print("yes", end =" ")
