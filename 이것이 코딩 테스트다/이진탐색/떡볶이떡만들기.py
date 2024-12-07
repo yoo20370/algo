@@ -42,59 +42,31 @@
 
 # print(maxHeight)
     
+
 import sys
+
 N, M = map(int, sys.stdin.readline().split())
+
 riceCakes = list(map(int, sys.stdin.readline().split()))
 
-maxVal = max(riceCakes)
+maxHeight = max(riceCakes)
 
-def func(left, right, maxVal) :
+def findMaxHeight(maxHeight) :
+    pl = 0
+    pr = maxHeight
+    maxVal = 0 
+    while pl <= pr :
+        mid = (pl+pr) // 2
 
-    if left > right :
-        return 0
+        result = sum(max(0, height - mid) for height in riceCakes)
 
-    pl = left
-    pr = right
-    mid = (pl+pr) // 2
-
-    remainRiceCake = sum(max(0, riceCake - mid) for riceCake in riceCakes)
-
-    if M <= remainRiceCake :
-        result = func(mid+1, pr, maxVal)
-        
-    elif M > remainRiceCake :
-        result = func(pl, mid-1, maxVal)
+        # 제일 높은 값을 출력해야 하는데 그렇지 않음 
+        if result >= M : 
+            maxVal = max(maxVal, mid)
+            pl = mid + 1
+        elif result < M :
+            pr = mid - 1
     
-    maxVal = (maxVal, result)
-
     return maxVal
-    
-print(func(0, maxVal, 0))
 
-# import sys
-
-# N, M = map(int, sys.stdin.readline().split())
-
-# riceCakes = list(map(int, sys.stdin.readline().split()))
-
-# maxHeight = max(riceCakes)
-
-# def findMaxHeight(maxHeight) :
-#     pl = 0
-#     pr = maxHeight
-#     maxVal = 0 
-#     while pl <= pr :
-#         mid = (pl+pr) // 2
-
-#         result = sum(max(0, height - mid) for height in riceCakes)
-
-#         # 제일 높은 값을 출력해야 하는데 그렇지 않음 
-#         if result >= M : 
-#             maxVal = max(maxVal, mid)
-#             pl = mid + 1
-#         elif result < M :
-#             pr = mid - 1
-    
-#     return maxVal
-
-# print(findMaxHeight(maxHeight))
+print(findMaxHeight(maxHeight))
