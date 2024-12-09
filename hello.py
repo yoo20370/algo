@@ -1,3 +1,1 @@
-import sys
-
-N = int(sys.stdin.readline().rstrip())
+print("The world says hello!")
