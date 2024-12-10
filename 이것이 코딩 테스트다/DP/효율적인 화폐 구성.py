@@ -30,7 +30,8 @@
 # else :
 #     print(result)
 
-# Bottom 방식
+
+# Bottom Up 방식
 import sys
 
 N, M = map(int, sys.stdin.readline().split())
