@@ -2,5 +2,7 @@ import sys
 
 N = int(sys.stdin.readline().rstrip())
 
-for i in range(N) :
-    print(f"Hello World, Judge {i+1}!")
+if N == 0 :
+    print("YONSEI")
+elif N == 1 :
+    print("Leading the Way to the Future")
