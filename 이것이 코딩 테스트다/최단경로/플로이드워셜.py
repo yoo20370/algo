@@ -18,6 +18,7 @@ def floyd(distance) :
         for start in range(1, N+1) :
             for end in range(1, N+1) :
                 distance[start][end] = min(distance[start][end], distance[start][mid] + distance[mid][end])
+                
 floyd(distance)
 
 for row in range(1, N+1) :
