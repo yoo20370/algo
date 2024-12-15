@@ -42,18 +42,7 @@ for i in topology_sort() :
     print(i, end=" ")
 
 
-    
 
-
-# def topology_sort() :
-#     result = []
-#     queue = deque()
-
-#     for i in range()
-    
-#     return result
-
-# print(topology_sort())
 
 
 
