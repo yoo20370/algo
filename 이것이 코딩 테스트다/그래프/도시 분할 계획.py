@@ -26,11 +26,12 @@ for i in range(roadCnt) :
 
 edges.sort()
 
+last = 0
 totalCost = 0
 for cost, start, end in edges :
     if find_parent(parent, start) != find_parent(parent, end) :
         totalCost += cost
         union(parent, start, end)
-
-print(totalCost)
+        last = cost
+print(totalCost - last)
 
