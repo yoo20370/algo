@@ -77,3 +77,4 @@ for i in range(N) :
 
 for i in result :
     print(i)
+            

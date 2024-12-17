@@ -25,7 +25,7 @@ def pop_front() -> int :
         return 1
     else :
         temp = dat[head]
-        head -= 1
+        head += 1
         return temp 
     
 def pop_back() -> int :

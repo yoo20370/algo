@@ -1,6 +1,6 @@
 import sys
 
-MX = int(1e5)
+MX = int(1e8)
 
 dat = [0] * (MX + 1)
 head = 0
@@ -42,7 +42,6 @@ def back() -> int :
     return dat[tail -1]
 
 N = int(sys.stdin.readline().rstrip())
-
 
 result = []
 for i in range(N) :
