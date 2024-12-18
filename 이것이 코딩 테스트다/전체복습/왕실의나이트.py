@@ -18,6 +18,3 @@ for nx, ny in route :
         cnt += 1
 
 print(cnt)
-
-
-
