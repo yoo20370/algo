@@ -17,7 +17,7 @@ end = 0
 # 동, 서, 남, 북
 check = [(1,0), (-1,0), (0, 1), (0, -1)]
 
-def miroEscape(graph, x, y) :
+def miroEscape(graph, x, y) -> None:
     queue = deque()
     queue.append([x,y])
     graph[y][x] = 1
