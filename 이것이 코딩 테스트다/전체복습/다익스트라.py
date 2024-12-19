@@ -9,7 +9,7 @@ def dijkstra(graph, start) -> None:
     while heap :
         currCost, currNode = heapq.heappop(heap)
 
-        # 이미 해당 노드에 대해서 처리 했기 때문에 힙에 들어간 값보다 작음 
+        # 이미 해당 노드에 대해서 처리했으므로 최단 거리가 짧아질 수 없음 
         if distance[currNode] < currCost :
             continue 
         for endNode, cost in graph[currNode] :
