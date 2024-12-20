@@ -30,8 +30,6 @@ def check(input_data) -> int :
                     result = val * 2 
                 stack.append(result)
                 val = 0
-            elif data == '[' :
-                pass
             else : 
                  # 닫는 괄호가 등장했을 떄, 스택에서 꺼낸 값이 숫자인 경우 스택에서 해당 숫자를 꺼내 가지고 있는다. 
                 input_data.appendleft(')')
@@ -52,8 +50,6 @@ def check(input_data) -> int :
 
                 stack.append(result)
                 val = 0
-            elif data == '[' :
-                pass
             else : 
                  # 닫는 괄호가 등장했을 떄, 스택에서 꺼낸 값이 숫자인 경우 스택에서 해당 숫자를 꺼내 가지고 있는다. 
                 input_data.appendleft(']')
