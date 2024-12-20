@@ -13,7 +13,6 @@ rice_cakes = list(map(int, sys.stdin.readline().split()))
 
 max_length = max(rice_cakes)
 
-
 pl = 0 
 pr = max_length
 
