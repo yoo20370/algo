@@ -11,11 +11,12 @@ def bfs(draw_paper, row, col, row_len, col_len) -> int:
 
     draw_paper[row][col] = 0
 
-    size = 1 
+    size = 0
 
     while queue :
         curr_row, curr_col = queue.popleft()
-        
+        size += 1
+
         for d_row, d_col in route :
             n_row = curr_row + d_row 
             n_col = curr_col + d_col
@@ -23,11 +24,9 @@ def bfs(draw_paper, row, col, row_len, col_len) -> int:
             if n_row >= 0 and n_row < row_len and n_col >= 0 and n_col < col_len and draw_paper[n_row][n_col] == 1 :
                 draw_paper[n_row][n_col] = 0 
                 queue.append((n_row, n_col))
-                size += 1
-
+                
     return size
     
-
 row, col = map(int, sys.stdin.readline().split())
 
 draw_paper = list()
