@@ -2,7 +2,7 @@ import sys
 from collections import deque
 
 
-def bfs(draw_paper, row, col, row_len, col_len) -> int:
+def bfs(draw_paper, row, col, row_len, col_len) -> int :
 
     queue = deque()
     queue.append((row, col))

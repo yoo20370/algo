@@ -29,11 +29,14 @@ def bfs(graph, row, col) -> int :
                 queue.append((n_row, n_col))
                 days = max(days, graph[n_row][n_col])
                 cnt += 1
-  
+                
+    # 모든 토마토가 익어 있는 경우 
     if temp == row * col :
         return 0
+    # 정상적으로 계산된 경우
     elif cnt + temp == row * col :
         return days - 1
+    # 모두 익지 않은 경우 
     else :
         return -1
 
