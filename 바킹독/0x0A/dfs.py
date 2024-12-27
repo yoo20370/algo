@@ -19,4 +19,3 @@ def dfs(visited, node) :
         for next in graph[curr] :
             if visited[next] == False :
                 stack.append(next)
-
