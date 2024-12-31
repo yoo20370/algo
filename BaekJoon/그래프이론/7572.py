@@ -19,7 +19,6 @@ def knight_movement() -> None:
 
     queue = deque()
     queue.append([start_r, start_c])
-    graph[start_r][start_c] = 0
 
     while queue :
         curr_r, curr_c = queue.popleft()
