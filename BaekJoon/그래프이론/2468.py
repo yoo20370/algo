@@ -19,7 +19,6 @@ def bfs(graph, row, col, n, h) -> None :
                 graph[n_r][n_c] = 0
                 queue.append([n_r, n_c])
 
-
 N = int(sys.stdin.readline().rstrip())
 
 graph = list()
