@@ -16,13 +16,10 @@
     
 #     return -1
 
-def binary_search(arr, left, right, key) :
+def binary_search(arr, pl, pr, key) :
 
     if pl > pr :
         return -1
-
-    pl = left
-    pr = right 
 
     mid = (pl+pr) // 2
     if arr[mid] < key :
