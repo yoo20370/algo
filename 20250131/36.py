@@ -2,6 +2,7 @@ import sys, copy
 from collections import deque
 N = int(sys.stdin.readline().rstrip())
 
+# 진입 차수
 entry_count = [0] * (N+1)
 
 graph = [ [] for i in range(N+1)]
