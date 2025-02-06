@@ -71,7 +71,7 @@
 input = "abadabac"
 
 def find_not_repeating_first_character(string):
-    
+
     alphabet_cnt = [0] * 26
 
     for char in string :
@@ -86,14 +86,11 @@ def find_not_repeating_first_character(string):
             not_reapeat_char.append(chr(idx + ord('a')) )
     
     for char in string :
-        for not_char in not_reapeat_char :
-            if char == not_char :
-                return char
+        if char in not_reapeat_char :
+            return char
 
     return "_" 
         
-
-
 result = find_not_repeating_first_character
 print("정답 = d 현재 풀이 값 =", result("abadabac"))
 print("정답 = c 현재 풀이 값 =", result("aabbcddd"))
