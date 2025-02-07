@@ -15,7 +15,7 @@ password_list = []
 # 각 조합의 각 문자를 순회하면서 모음 개수와 자음 개수를 카운트한다. 
 # 모음 자음의 경우 결과 리스트에 넣을 때, 개수를 충족하는지 검사한다. 
 
-for combination in itertools.combinations(password_chars, 4) :
+for combination in itertools.combinations(password_chars, password_length) :
     combination = list(combination)
 
     consonants_count = 0
