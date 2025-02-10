@@ -15,7 +15,7 @@ def merge_sort(array) :
     pr = len(array) - 1
     mid = (pl + pr) // 2
 
-    # 리스트 슬라이싱은 start:end에서 end는 포함하지 않으므로 +1을 해줘야 정확히 절반으로 잘린다.
+    # 리스트 슬라이싱은 start:end에서 end는 포함하지 않으므로 +1을 해줘야 정확히 절반으로 잘린다. 
     # 궁극적으로 [] 리스트가 되면서 무한루프에 빠지게 됨 
     left_array = merge_sort(array[pl:mid+1])
     right_array = merge_sort(array[mid+1:])
