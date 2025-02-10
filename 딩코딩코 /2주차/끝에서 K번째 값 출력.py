@@ -3,6 +3,12 @@ class Node:
         self.data = data
         self.next = None
 
+# 첫 번째 성능 개선 
+# 두 개의 포인터를 사용하면 성능 개선 가능
+# fast, slow 노드를 둔다. 항상 K만큼 떨어져 있게 한다.
+
+# 두 번째 성능 개선 
+# 
 
 class LinkedList:
     def __init__(self, value):
@@ -14,18 +20,23 @@ class LinkedList:
             cur = cur.next
         cur.next = Node(value)
 
-    def get_kth_node_from_last(self, k):
-        traver_list = []
+    def get_kth_node_from_last(self, k): 
+        
+        slow_index = -k
+        fast_index = 0 
+        slow = self.head
+        fast = self.head
 
-        curr = self.head 
+        while fast != None :
+            if slow_index >= 0 :
+                slow = slow.next 
+            
+            fast = fast.next
 
-        while curr != None :
-            traver_list.append(curr)
-            curr = curr.next 
-
-        target_index = len(traver_list) - k
-        return traver_list[target_index]
-
+            fast_index += 1
+            slow_index += 1
+        
+        return slow
 
 linked_list = LinkedList(6)
 linked_list.append(7)
