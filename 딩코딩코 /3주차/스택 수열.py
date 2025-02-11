@@ -18,11 +18,11 @@ def stack_sequence(input_list) -> list :
 
     # 입력으로 들어온 데이터가 curr_num보다 작은 경우 curr_num이 나올 때까지 pop()을 수행한다.
     # 이 때 만약, pop() 결과가 curr_num보다 작은 값이 출력되면 No 출력 
+    # 만약 아직 원하는 입력 데이터가 출력되지 않았는데 스택이 빈 경우도 No를 출력한다.
 
     result_list = []
 
     stack = []
-
     curr_num = 0
 
     for input in input_list :

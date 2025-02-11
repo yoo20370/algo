@@ -5,8 +5,9 @@ tower_height_list = list(map(int, sys.stdin.readline().split()))
 
 def send_signal_tower(tower_height_list, tower_count) -> list :
 
-    # send_signal_tower_list가 비어 있다면, tower_height_list 맨 위의 타워의 인덱스와 높이 정보를 send_singal_tower에 삽입한다. 
+    # 컴퓨터가 이 문제를 어떻게 해결할 수 있을까 생각
 
+    # send_signal_tower_list가 비어 있다면, tower_height_list 맨 위의 타워의 인덱스와 높이 정보를 send_singal_tower에 삽입한다. 
     # 비어 있지 않다면, 인덱스 정보와 높이 정보를 꺼내어 비교한다.
     # 1. send_signal_tower 맨 위의 높이 정보와 비교한다.
     # 2. 만약 높이 정보가 더 높다면 send_signal_tower_stack의 맨 위 데이터를 pop하고, result_list에 정보를 기록한다. 
