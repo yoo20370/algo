@@ -3,7 +3,7 @@ class MaxHeap :
     def __init__ (self) :
         self.items = [None]
 
-    def insert(self, value) :
+    def insert(self, value) : # O(lgN)
         self.items.append(value)
 
         curr_index = len(self.items) - 1
@@ -15,17 +15,14 @@ class MaxHeap :
             curr_index = parent_index
             parent_index = curr_index // 2
 
-    def delete(self) :
+    def delete(self) : # O(lgN)
         
         # 삭제 할 것이 없기 때문
         if len(self.items) == 1 :
             return -1
 
-        return_value = self.items[1]
-        last_index = len(self.items) - 1
-
-        self.items[1], self.items[last_index] = self.items[last_index], self.items[1]
-        self.items.pop()
+        self.items[1], self.items[-1] = self.items[-1], self.items[1]
+        return_value = self.items.pop()
 
         # 삭제 후 
         curr_index = 1
@@ -49,7 +46,6 @@ class MaxHeap :
                  # 자식이 둘 다 없는 경우는 종료한다. 
                 break
 
-        
         return return_value
            
 max_heap = MaxHeap()
