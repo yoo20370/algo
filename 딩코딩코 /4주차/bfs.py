@@ -27,7 +27,6 @@ def bfs_queue(adj_graph, start_node):
         
         for adjacent_node in adj_graph[curr_node] :
             if not adjacent_node in visited :
-                
                 queue.append(adjacent_node)
     # 구현해보세요!
     return visited

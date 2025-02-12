@@ -15,7 +15,7 @@ def robot_vacuum_cleaner(row, col, s_row, s_col, s_dis, graph) -> int :
     # 이동하자마다 청소하지 않은 구역이라면 청소를 수행한다.
     # 큐에는 다음 이동할 칸을 넣는 것이다. 
     # 회전한 후(turn_left), 바로 앞 칸(move_forward)이 청소가 되어 있지 않다면 큐에 row, col, dis를 삽입하고 반복문 탈출 
-    # 사방면을 모두 확인했음에도 불구하고, 청소할 수 있는 영역이 없다면 뒤로 이동한다.
+    # 사방면을 모두 확인했음에도 불구하고, 청소할 수 있는 영역이 없다면 뒤로 이동한다. (큐에 뒤로 이동 좌표 삽입)
     # 이 때 뒤가 벽(1)인 경우 외부 반복문을 탈출한다.
 
     # 북, 동, 남, 서
@@ -41,7 +41,6 @@ def robot_vacuum_cleaner(row, col, s_row, s_col, s_dis, graph) -> int :
             # 앞으로 이동 
             n_row, n_col = move_forward[dis]
 
-            
             d_row = c_row + n_row
             d_col = c_col + n_col
 
@@ -57,7 +56,7 @@ def robot_vacuum_cleaner(row, col, s_row, s_col, s_dis, graph) -> int :
             d_row = c_row - n_row
             d_col = c_col - n_col 
 
-            if d_row >= 0 and d_col >= 0 and d_row < row and d_col < col and graph[d_row][d_col] == 1 :
+            if graph[d_row][d_col] == 1 :
                 break
             
             queue.append((d_row, d_col, c_dis))
