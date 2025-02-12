@@ -19,11 +19,12 @@ def solution(genres, plays):
         hash_index = hash(genre_name) % MX_GENRES
         sing_info_table[hash_index].append((genre_name, index, play_count))
     
-    genre_plays_count_array = []
-    # 딕셔너리 -> 배열로 변환 
-    for genre_name in genre_plays_count.keys() : # O(N)
-        value = genre_plays_count.get(genre_name)
-        genre_plays_count_array.append((genre_name, value))
+    # items()를 사용하여 딕셔너리를 리스트로 변환 
+    genre_plays_count_array = list(genre_plays_count.items())
+    # # 딕셔너리 -> 배열로 변환 # O(N )
+    # for genre_name in genre_plays_count.keys() : 
+    #     value = genre_plays_count.get(genre_name)
+    #     genre_plays_count_array.append((genre_name, value))
     
     # 속한 노래가 많이 재생된 장르 정렬 O(NlgN)
     genre_plays_count_array.sort(key=lambda x : -x[1])
