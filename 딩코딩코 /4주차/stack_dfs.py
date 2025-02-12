@@ -51,14 +51,13 @@ def dfs_stack(adjacent_graph, start_node):
     while stack :
         curr_node = stack.pop()
 
-        if not visited[curr_node] :
-            visited[curr_node] = True
-            result.append(curr_node)
+        visited[curr_node] = True
+        result.append(curr_node)
 
-            for visit_node in sorted(adjacent_graph[curr_node], reverse=True) :
-                if not visited[visit_node] :
-                    stack.append(visit_node)
-        
+        for visit_node in adjacent_graph[curr_node] :
+            if not visited[visit_node] :
+                stack.append(visit_node)
+                    
     return result
 
 
