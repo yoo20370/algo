@@ -35,8 +35,8 @@ def prime_check(n) -> None :
     for curr_prime in range(2, int(n ** 0.5) + 1) :
 
         if prime_check_array[curr_prime] == True :
-            for multiple in range(curr_prime * curr_prime, n + 1, curr_prime):  # 배수 제거
-                prime_check_array[multiple] = False
+            for multi in (curr_prime * curr_prime, n + 1, curr_prime) :
+                prime_check_array[multi] = False
 
     for i in range(1, len(prime_check_array)) :
         if prime_check_array[i] :

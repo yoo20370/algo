@@ -36,7 +36,7 @@ def robot_vacuum_cleaner(row, col, s_row, s_col, s_dis, graph) -> int :
         dis = c_dis
         for _ in range(4):
             # 회전 
-            dis = turn_left[dis]
+            dis = turn_left[dis] # (현재 방향 + 3) % 4를 수행해서 처리할 수 있음
 
             # 앞으로 이동 
             n_row, n_col = move_forward[dis]
