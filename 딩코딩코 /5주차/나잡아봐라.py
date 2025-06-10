@@ -19,7 +19,7 @@ def catch_me(cony_position, brown_position) -> int:
     # 예를 들어 코니가 12일 때, 브라운 3위치에 대하여 BFS를 수행하여 모든 경우의 수를 구한다. 
 
     # 큐에 위치 넣어야 함
-    # 언제의 위치를 넣어야하지 ?? 
+    # 언제 위치를 넣어야하지 ?? 
     # 이동한 위치를 넣을 것인가 아니면 이동하기 전 위치를 넣을 것이냐
     # 이동한 위치를 넣는게 맞다고 생각 
 
@@ -37,7 +37,7 @@ def catch_me(cony_position, brown_position) -> int:
                 return time
             
             else :
-                # 다음 시간에 비교할 데이터를 큐에 적재 
+                # 다음 시간에 비교할 위치를 큐에 적재 
                 if curr_position - 1 >= 0 and curr_position - 1 not in visited :
                     visited.add(curr_position - 1)
                 
