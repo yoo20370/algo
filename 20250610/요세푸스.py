@@ -14,7 +14,7 @@ def josephus_problem(n, k):
     target_index = k-1 
     while len(group) != 1 :
         result.append(group.pop(target_index))
-        target_index += k - 1
+        target_index += k-1
 
         while len(group) <= target_index:
             target_index = target_index % len(group)
