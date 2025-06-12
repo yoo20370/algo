@@ -3,7 +3,6 @@
 
 def solution(genres, plays):
     
-    answer = []
     play_rank = {}
     genres_list = {}
     
@@ -28,6 +27,7 @@ def solution(genres, plays):
     play_rank_list = list(play_rank.items())
     play_rank_list.sort(reverse=True, key = lambda x : x[1])
     
+    answer = []
     for genre, play in play_rank_list :
         genre_list = sorted(genres_list.get(genre), key = lambda x : (x[1], -x[0]))
         
