@@ -23,10 +23,9 @@ def future_city() :
                 graph[start][end] = min(graph[start][end], graph[start][mid] + graph[mid][end])
 
     time = graph[1][K] + graph[K][X]
-    if time < INF :
-        print(time)
-    else :
+    if time >= INF :
         print(-1)
-
+    else :
+        print(time)
 
 future_city()
