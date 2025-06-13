@@ -43,8 +43,10 @@ def divide_city(road_list, house_cnt) -> int :
             total_cost += cost
             last = cost
     
+    print(total_cost, last)
     total_cost -= last
 
+    
     return total_cost
 
 print(divide_city(road_list, house_cnt))

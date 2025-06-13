@@ -1,35 +1,35 @@
 # 프림 알고리즘 
 import sys, heapq
 
-# def prim_algo() :
-#     visited = []
-#     city_count, road_count = map(int, sys.stdin.readline().split())
+def prim_algo() :
+    visited = []
+    city_count, road_count = map(int, sys.stdin.readline().split())
 
-#     graph = [[] * (city_count + 1) for _ in range(city_count + 1)]
+    graph = [[] * (city_count + 1) for _ in range(city_count + 1)]
 
-#     for _ in range(road_count) :
-#         start, end, cost = map(int, sys.stdin.readline().split())
-#         graph[start].append([cost, end])
+    for _ in range(road_count) :
+        start, end, cost = map(int, sys.stdin.readline().split())
+        graph[start].append([cost, end])
 
-#     priority_queue = []
-#     heapq.heappush(priority_queue, [0, 1])
+    priority_queue = []
+    heapq.heappush(priority_queue, [0, 1])
 
-#     total_cost = 0
-#     while priority_queue :
-#         curr_cost, curr_city = heapq.heappop(priority_queue)
+    total_cost = 0
+    while priority_queue :
+        curr_cost, curr_city = heapq.heappop(priority_queue)
 
-#         if curr_city in visited :
-#             continue 
-#         visited.append(curr_city)
-#         total_cost += curr_cost
+        if curr_city in visited :
+            continue 
+        visited.append(curr_city)
+        total_cost += curr_cost
 
-#         for next_cost, next_city in graph[curr_city] :
-#             if next_city not in visited :
-#                 heapq.heappush(priority_queue, [next_cost, next_city])
+        for next_cost, next_city in graph[curr_city] :
+            if next_city not in visited :
+                heapq.heappush(priority_queue, [next_cost, next_city])
     
-#     print(total_cost)
+    print(total_cost)
 
-# prim_algo()
+prim_algo()
 
 # 크루스칼 알고리즘
 def find(parent, x) :

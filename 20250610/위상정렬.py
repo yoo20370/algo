@@ -12,7 +12,7 @@ def topological_sort() :
     node_count, edge_count = map(int, sys.stdin.readline().split())
 
     entry_table = [0] * (node_count + 1)
-    graph = [[] * (node_count + 1) for _ in range(node_count + 1)]
+    graph = [[] for _ in range(node_count + 1)]
     for _ in range(edge_count) :
         start, end = map(int, sys.stdin.readline().split())
         # 큐에서 꺼냈을 때, 간선을 제거해야할 인접 노드 리스트 
@@ -40,9 +40,11 @@ def topological_sort() :
             if entry_table[near_node] == 0 :
                 queue.append(near_node)
 
-    return result
 
-print(topological_sort())
+    for i in result :
+        print(i, end=" ")
+
+topological_sort()
 
 
 
