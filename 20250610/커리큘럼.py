@@ -27,7 +27,6 @@ def corriculum() :
             graph[node].append(index)
             entry_counts[index] += 1
 
-    print(entry_counts)
     # 시간 기록을 위한 테이블 
     result_times = [0] * (lecture_count + 1)
     queue = deque()

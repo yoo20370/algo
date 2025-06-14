@@ -33,5 +33,8 @@ def dijkstra():
                 heapq.heappush(priority_queue, [min_distance, near_node])
 
     for index in range(1, node_count + 1) :
-        print(distance[index])
+        if distance[index] == INF :
+            print("INF")
+        else :
+            print(distance[index])
 dijkstra()

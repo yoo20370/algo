@@ -1,4 +1,6 @@
-input = "011110"
+import sys
+
+input = sys.stdin.readline().rstrip()
 
 # 가독성이 조금 떨어지는 것 같음 
 # 가독성 좋게 수정하는게 좋을 듯 
