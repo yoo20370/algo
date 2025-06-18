@@ -11,7 +11,7 @@
 # a를 마주했을 때 패턴 리스트에 해당하는 패턴이 있는지 찾는다. 찾았다면 패턴 길이 만큼 이동하여 cnt를 구한다.
 # 패턴과 다른 문자를 찾았다면 해당 cnt가 1이 아닐 때, 압축을 진행해서 결과 리스트에 넣는다.
 # 그리고 다시 패턴 리스트를 처음부터 순회하여 해당하는 패턴이 있는지 찾는다. (해당하는 패턴이 없다면 오류)
-# 이런 식으로 패턴 길이별 최대 압축 길이를 구해서 그 중 최소 값을 반환하도록ㅎ ㅏㄴ다.
+# 이런 식으로 패턴 길이별 최대 압축 길이를 구해서 그 중 최소 값을 반환하도록 한다.
 
 # 우선 패턴부터 저장해야할 것 같다. 
 # pattern_list에 패턴을 2차원 배열로 저장할 예정 
@@ -27,6 +27,9 @@
 # 5 // 2 + 1 -> 3 
 # pattern -> 0, 1, 2 
 
+# 온 몸 비틀기 풀이법 
+# 즉, 잘못된 접근 방법 
+
 def solution(s):
     # 1일 때 반례를 찾지 못해서 혼자 풀지 못함 -> 왜 1일 때 걸러주지 못했는지 확인해보자 
     if len(s) == 1 :
@@ -38,10 +41,11 @@ def solution(s):
     pattern = [[] for _ in range(len(s) // 2 + 1)]
     
     # 길이 
-    for length in range(1, len(s) // 2 + 1) :
+    
+    for length in range(1, len(s) // 2 + 1) : # O(lgN)
     
         start_index = 0
-        while start_index <= len(s) - length :
+        while start_index <= len(s) - length : 
             pattern[length].append(s[start_index: start_index + length])
             start_index += length
     
@@ -49,17 +53,17 @@ def solution(s):
     
     # 이제 할 거임 
     # 1부터 len(s) // 2 길이까지 진행 
-    for length in range(1, len(s) // 2 + 1) :
+    for length in range(1, len(s) // 2 + 1) :  
         
         result = ""
         start_index = 0 
-        while start_index <= len(s) - length :
+        while start_index <= len(s) - length : 
             
             # 비교할 텍스트  
             curr_str = s[start_index:start_index + length] 
             
             # 비교할 패턴 찾기 
-            for pattern_str in pattern[length] :
+            for pattern_str in pattern[length] : 
                 
                 # 비교할 텍스트와 패턴이 같은 경우 
                 if curr_str == pattern_str :
