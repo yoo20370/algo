@@ -26,6 +26,7 @@ def catch_me() :
 
     cony_position, brown_position = map(int, sys.stdin.readline().split())
 
+    # 시간을 고려하지 못한점 반성하시오 -> 나중에 다시 풀어볼 것 
     graph = [{} for _ in range(MX)]
 
     queue = deque()
