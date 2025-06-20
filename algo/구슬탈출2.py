@@ -29,21 +29,12 @@ def move_beed(board, curr_row, curr_col, move_row, move_col) :
     # 현재 위치가 구멍이라면 break 후 반환 
     
     move_count = 0
-    while True :
+    while board[curr_row + move_row][curr_col + move_col] != "#" and board[curr_row + move_row][curr_col + move_col] != "O" :
+        curr_row += move_row
+        curr_col += move_col
+        move_count += 1
     
-        if board[curr_row][curr_col] == "O" :
-            return curr_row, curr_col, move_count
-        
-        next_row = curr_row + move_row 
-        next_col = curr_col + move_col
-
-        if board[next_row][next_col] == "#" :
-            return curr_row, curr_col, move_count
-        
-        move_count += 1 
-
-        curr_row = next_row
-        curr_col = next_col
+    return curr_row, curr_col, move_count
 
 def beed_game() :
 
@@ -96,12 +87,13 @@ def beed_game() :
 
             r_row, r_col, red_move_count = move_beed(board, red_row, red_col, move_row, move_col)
             b_row, b_col, blue_move_count = move_beed(board, blue_row, blue_col, move_row, move_col)
+            
             # 파란 구슬도 빠진 경우 
-            if board[b_row][b_col] == "O" :
+            if board[b_row + move_row][b_col + move_col] == "O" :
                 continue
 
             # 구슬이 구멍으로 빠졌을 때, 
-            if board[r_row][r_col] == "O" :
+            if board[r_row + move_row][r_col + move_col] == "O" :
                 return curr_turn
 
             if r_row == b_row and r_col == b_col :
