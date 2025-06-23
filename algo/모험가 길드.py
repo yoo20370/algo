@@ -19,18 +19,18 @@ def func() :
     curr_index = 0
 
     while curr_index < length and length - curr_index >= people[curr_index] :
-        
-        # 특정 범위의 합이 현재 인덱스 
-        result = sum(people[curr_index:curr_index + people[curr_index]]) / people[curr_index]
-        result = int(math.ceil(result))
 
-        if result > people[curr_index] :
-            return count 
-        
+        # 마지막 인덱스 + 1 까지 
+        end = curr_index + people[curr_index]
+        for next_index in range(curr_index + 1, end, 1) :
+            if people[curr_index] < people[next_index] :
+                return count
+
         count += 1
         curr_index += people[curr_index]
 
     return count
+
 print(func())
 
 
