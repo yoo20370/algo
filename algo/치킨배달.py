@@ -35,6 +35,7 @@ def total_cost(house_list, chicken_list) :
 
     total_cost = 0
     for x1, y1 in house_list :
+        
         min_cost = INF
         for x2, y2 in chicken_list :
             min_cost = min(min_cost, cal_chicken_distance(x1,y1, x2,y2))
