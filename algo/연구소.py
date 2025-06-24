@@ -9,7 +9,8 @@
 # 2인 위치에 대하여 bfs를 수행하고, 방문한 위치를 2로 설정한다.
 # 2차원 배열을 순회하여 값이 아직 0인 위치를 계산한다.
 
-import sys, copy
+
+import sys
 from itertools import permutations
 from collections import deque
 
@@ -20,7 +21,6 @@ def solution() :
     graph = []
     for _ in range(row) :
         graph.append(list(map(int, sys.stdin.readline().split())))
-
 
     build_wall_list = []
     virus_list = []
@@ -37,10 +37,9 @@ def solution() :
     max_count = 0
     # 무조건 3개를 만들어야 함 
     for build_wall in permutations(build_wall_list, 3) :
-        print(build_wall)
-        
-        new_graph = copy.deepcopy(graph)
+        new_graph = [item[:] for item in graph]
 
+        # 벽 세우기 
         for curr_row, curr_col in build_wall :
             new_graph[curr_row][curr_col] = 1
 
