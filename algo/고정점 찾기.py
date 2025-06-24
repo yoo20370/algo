@@ -1,23 +1,6 @@
 # 고정점이란 수열의 원소 중에서 그 값이 인덱스와 동일한 원소를 의미 
 import sys 
 
-def binary_search(array, target) :
-
-    pl = 0
-    pr = len(array) - 1
-
-    while pl <= pr :
-        mid = (pl + pr) // 2
-
-        if array[mid] < target :
-            pl = mid + 1
-        elif array[mid] > target :
-            pr = mid - 1
-        else :
-            return mid
-
-    return - 1
-
 def solution() :
 
     length = int(sys.stdin.readline().rstrip())
