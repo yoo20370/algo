@@ -82,6 +82,8 @@ def solution() :
 
     queue = deque()
     queue.append((start_city, 0))
+    
+    visited.add(start_city)
 
     result = []
     while queue:
