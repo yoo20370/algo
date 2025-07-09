@@ -22,7 +22,7 @@ def solution() :
     
     for i in range(1, a_length + 1) :
         for j in range(1, b_length + 1) :
-            if string_a[i - 1] != string_b[j - 1] :
+            if string_a[i - 1] == string_b[j - 1] :
                 memo[i][j] = memo[i-1][j-1]
             else :
                 memo[i][j] = 1 + min(memo[i-1][j], memo[i][j-1], memo[i-1][j-1])
