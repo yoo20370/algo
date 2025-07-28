@@ -18,9 +18,7 @@ def solution(citations):
     h = 0 
     cnt = 0
     for curr_value in citations :
-        if curr_value > cnt :
-            h = cnt
-        else :
+        if curr_value <= cnt :
             return cnt 
         cnt += 1
     

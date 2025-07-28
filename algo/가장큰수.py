@@ -37,7 +37,7 @@
 #     return answer
 
 ## 숫자가 3자리이므로, 모든 수가 3자리 이상이 되도록 만든 후, 문자열 정렬하면 되는 문제
-## 다만, 0만 들어오는 경우는 0을 반환해줘야 하므로 예외 처리해주면 됨 
+## 다만, 0만 들어오는 경우는 0을 반환해줘야 하므로 예외 처리해주면 됨 '
 
 def solution(numbers):
     str_numbers = sorted(map(str, numbers), reverse=True, key = lambda x : x*3)
