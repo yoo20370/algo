@@ -10,9 +10,10 @@ sys.setrecursionlimit(int(1e9))
 # 빈 글자로 시작해서 각 글자수에서 A E I O U를 반복할 예정 
 
 def dfs(curr_string) :
-    global count 
-    global answer
-    global target
+    global count, answer, target
+
+    if answer != -1 :
+        return
 
     if curr_string == target :
         answer = count
@@ -28,9 +29,8 @@ def dfs(curr_string) :
         
 
 def solution(word):
-    global count 
-    global answer
-    global target 
+    global count, answer, target 
+    answer = -1
     target = word
     count = 0
     
