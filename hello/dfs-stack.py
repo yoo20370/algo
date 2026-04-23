@@ -18,20 +18,20 @@ graph = {
 
 def dfs_stack(adjacent_graph, start_node):
 
-    visitied = []
+    visitied = set([start_node])
+    result = []
     stack = [start_node]
 
     while stack :
         currentNode = stack.pop()
-        visitied.append(currentNode)
+        result.append(currentNode)
 
-        
         for node in adjacent_graph[currentNode] : 
             if node not in visitied :
                 stack.append(node)
+                visitied.add(node)
 
-    return visitied
-
+    return result
 
 print(dfs_stack(graph, 1))  # 1 이 시작노드입니다!
 # [1, 9, 10, 5, 8, 6, 7, 2, 3, 4] 이 출력되어야 합니다!
