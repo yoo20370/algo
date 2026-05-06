@@ -13,51 +13,33 @@ import sys
 # 결국 왼쪽 틀린 것과 오른쪽 틀린 것을 구분해야 함 
 
 # 틀렸어, 근데 왼쪽이랑 오른쪽이랑 구분해줘야 함 
-# 
 
-def palindrome(string) :
+def palindrome(string, left, right, removed) :
 
-    stringLength = len(string)
-
-    totalStep = stringLength // 2
-
-    pl = 0
-    pr = stringLength - 1
-
-    step = 0
-    failCount = 0
-
-    failStep = -1 
-    while step < totalStep :
-
-        if string[pl + step] != string[pr - step] :
-
-
-            if failCount == 0 :
-                failCount += 1
-                failStep = step
-                pl += 1
-                continue
-
-            elif failCount == 1 :
-                failCount += 1
-                step = failStep
-                pl -= 1
-                pr -= 1
-                continue
-
-            else : 
-                return failCount
+    if left >= right :
+        if removed :
+            return 1
+        else :
+            return 0
         
-        step += 1
-
-    if failCount == 0 :
-        return failCount
-    else :
-        return 1
-        
-
     
+    if string[left] != string[right] :
+
+        if removed :
+            return 2
+        
+        leftCase = palindrome(string, left + 1, right, True)
+        rightCase = palindrome(string, left, right - 1, True)
+
+        if leftCase != 2 or rightCase != 2 :
+            return 1
+        
+        return 2
+
+    else :
+        return palindrome(string, left + 1, right - 1, removed)
+
+        
 def solution() :
     
     T = int(sys.stdin.readline().rstrip())
@@ -65,6 +47,6 @@ def solution() :
     for _ in range(T) :
         string = sys.stdin.readline().rstrip()
 
-        print(palindrome(string))
+        print(palindrome(string, 0, len(string) - 1, False))
 
 solution()
