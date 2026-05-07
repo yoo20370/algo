@@ -13,7 +13,6 @@ import sys
 # 결국 왼쪽 틀린 것과 오른쪽 틀린 것을 구분해야 함 
 
 # 틀렸어, 근데 왼쪽이랑 오른쪽이랑 구분해줘야 함 
-# 
 
 def palindrome(string) :
 
