@@ -43,6 +43,7 @@ def solution() :
             # 타워가 수신하지 못한다면 ??, 스택에 삽입 
             stack.append([currentTower, currentIndex])
 
+    # 코드 하나하나 작성할 때 이유를 들어서 작성해라 
     for tower in range(len(result)) :
         print(result[tower], end = " ")
 
