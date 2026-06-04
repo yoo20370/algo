@@ -58,14 +58,15 @@ def solution() :
         # 수강 강의 
         courseNumber= heapq.heappop(priorityQueue)
 
-        # 
+        # 내 강의를 들을 수 있으니 선수 과목 중 가장 긴 과목의 대기 시간 + 내 과목 시간 
         waitTimes[courseNumber] = maxWaitTimes[courseNumber] + courseTimes[courseNumber]
 
         for adjacentCourse in preSubjects[courseNumber] :
             entryDegree[adjacentCourse] -= 1
 
+            # 선수 과목 중 더 큰 값을 기록하도록 함 (선수 과목 여러 개인 경우 대기 시간 중 가장 큰 값을 가지고 있게 함)
             maxWaitTimes[adjacentCourse] = max(maxWaitTimes[adjacentCourse], waitTimes[courseNumber])
-
+            
             if entryDegree[adjacentCourse] == 0 :
                 heapq.heappush(priorityQueue, adjacentCourse)
                 
