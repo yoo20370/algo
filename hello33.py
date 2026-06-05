@@ -5,7 +5,7 @@ data = [13, 4, 19, 1, 8, 16, 5, 11, 20, 3, 14, 7, 18, 10, 2, 15, 6, 17, 9, 12]
 
 def solution() :
 
-    quickSort(data, 0, len(data))
+    pass
 
     # insertSort(data)
 
