@@ -37,6 +37,7 @@
 # 중간에 하드디스크가 유후 상태가 될 수 있음 
 # 즉, 아직 모든 작업을 처리하지 않았는데 특정 시점에 대기큐가 비어서 작업을 처리할 수 없는 상태가 될 수 있음
 
+## 첫 번째 풀이 
 import heapq
 
 maxRequireTime = 1001
@@ -44,7 +45,6 @@ def solution(jobs):
     
     priorityQueue = []
     visitedQueue = set()
-    
     
     minRequireTime = maxRequireTime
     # 최초 실행 시간을 구해야 함 
@@ -106,3 +106,50 @@ def solution(jobs):
     returnTimeAvg = totalReturnTime // len(returnTimes)
     
     return returnTimeAvg
+
+# 두 번째 풀이
+import heapq
+
+def solution(jobs):
+    
+    newJobs = []
+    
+    # 데이터를 재생성한다. -> 500개 밖에 안 되기 때문에 그리 큰 시간 복잡도를 차지하지 않음 
+    for jobNumber in range(len(jobs)) :
+        requireTime, processTime = jobs[jobNumber] 
+        
+        newJobs.append([jobNumber, requireTime, processTime])
+        
+    sortedJob = sorted(newJobs, key=lambda x : x[1])
+    
+    jobCount = len(sortedJob)
+    
+    currentIndex = 0
+    currentTime = sortedJob[0][1]
+    
+    priorityQueue = []
+    
+    returnTimes = []
+    
+    while len(returnTimes) < jobCount :
+    
+        # 현재 시간을 기준으로 들어올 수 있는 경우를 다 넣어야 함 
+        while currentIndex < jobCount and currentTime >= sortedJob[currentIndex][1] :
+            jobNumber, requireTime, processTime = sortedJob[currentIndex]
+            heapq.heappush(priorityQueue, [processTime, jobNumber, requireTime])
+            currentIndex += 1
+            
+        if priorityQueue :
+            processTime, jobNumber, requireTime = heapq.heappop(priorityQueue)
+            
+            # 작업 진행 
+            currentTime += processTime
+            # 종료시간 - 요청시간 -> 반환 시간 구함 
+            returnTime = currentTime - requireTime
+            returnTimes.append(returnTime)
+            
+        else :
+            currentTime = sortedJob[currentIndex][1]
+            continue
+    
+    return sum(returnTimes) // len(returnTimes)
