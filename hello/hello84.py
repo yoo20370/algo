@@ -1,4 +1,3 @@
-
 import sys, itertools
 
 password_length, alpha_cnt = map(int, sys.stdin.readline().split())
