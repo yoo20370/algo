@@ -21,11 +21,9 @@ def solution(citations):
         
         # 인용된 논문 개수 
         BigCount = length - hIndexLocation
-        # 나머지 논문 개수 
-        RemainCount = length - BigCount
         
         # 조건에 맞는지 
-        if candiateHIndex <= BigCount and RemainCount <= candiateHIndex :
+        if candiateHIndex <= BigCount  :
             hIndex = candiateHIndex
             continue
         
