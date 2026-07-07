@@ -5,6 +5,8 @@
 # 그 중 최소값 구하면 될 듯 
 # 깊이 우선 탐색 문제인 듯 
 
+from collections import deque
+
 INF = int(1e9)
 
 def getDifferentCount(currentWord, targetWord) :
@@ -20,16 +22,13 @@ def solution(begin, target, words):
     
     minChangeCount = INF
     
-    # (현재단어, 변경 카운트)
-    stack = [(begin, 0)]
-    
+    queue = deque([(begin, 0)])
+
+
     visited = set()        
     
-    # 스택에 카운트랑 같이 튜플 형태로 넣어야 함 -> 특정 단어가 어떤 형태로 이동할지 경우의 수를 모두 따져야 하니까 
-    # 근데 visited를 하는 이유는 나중에 거쳐간 경우는 굳이 고려할 필요가 없음 그래서 방문처리해서 중복을 제거해주는 거임 
-    
-    while stack :
-        currentWord, currentCount = queue.pop()
+    while queue :
+        currentWord, currentCount = queue.popleft()
         
         if currentWord in visited :
             continue
@@ -45,7 +44,7 @@ def solution(begin, target, words):
             differtCount = getDifferentCount(currentWord, word)
             
             if differtCount == 1 and word not in visited :
-                stack.append((word, currentCount + 1))
+                queue.append((word, currentCount + 1))
     
     if minChangeCount == INF :
         return 0
