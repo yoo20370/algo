@@ -5,29 +5,24 @@
 # 즉, 백트래킹이 필요해보임 
 # dfs를 통해서 백트래킹을 해야 할 듯
 
-
-import copy 
-
-result = []
-isAvailable = True
-
 def dfs(begin, routeDict, resultList, visitedCityCount) : 
     
-    global result 
-    global isAvailable
+    if len(resultList) == visitedCityCount:
+        return True
+    
     # 접근 했을 때 방문할 곳이 없으면 
     for destination in routeDict[begin] :
-        copyResultList = copy.copy(resultList)
+
         # 방문 가능 
         if routeDict[begin][destination] > 0 :
             routeDict[begin][destination] -= 1
-            copyResultList.append(destination)
-            dfs(destination, routeDict, copyResultList, visitedCityCount)
+            resultList.append(destination)
+            if dfs(destination, routeDict, resultList, visitedCityCount) :
+                return True
+            resultList.pop()
             routeDict[begin][destination] += 1
     
-    if len(resultList) == visitedCityCount and isAvailable:
-        result = resultList
-        isAvailable = False
+    return False
 
 def solution(tickets):
     
@@ -54,6 +49,7 @@ def solution(tickets):
         destinationList = list(routeDict[begin].items())
         routeDict[begin] = dict(sorted(destinationList))
     
-    dfs('ICN', routeDict, ['ICN'], visitedCityCount)
+    resultList = ['ICN']
+    dfs('ICN', routeDict, resultList , visitedCityCount)
     
-    return result
+    return resultList
