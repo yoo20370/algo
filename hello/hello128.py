@@ -15,9 +15,7 @@ def solution() :
         card = int(sys.stdin.readline().rstrip())
         heapq.heappush(cards, card)
 
-    
-    # 근데 N이 1인 경우는 비교 자체를 안 해도 됨 -> 0 
-    # 
+    # 비교할 대상이 존재하지 않기 때문에 비교하지 않아도 됨 -> 0
     
     totalCompareCount = 0 
 
