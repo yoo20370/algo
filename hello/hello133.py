@@ -75,7 +75,6 @@ def solution() :
 
         getMinDistance(startRow, startCol, rowLength -1, colLength - 1, rowLength, colLength, graph)
 
-
 solution()
 
 
