@@ -49,7 +49,7 @@ def getMinDistance(startRow, startCol, endRow, endCol, rowLength, colLength, gra
             if nextRow >= 0 and nextRow < rowLength and nextCol >= 0 and nextCol < colLength :
                 totalCost = currentCost + graph[nextRow][nextCol] 
 
-                # 만약 이동한 위치에 대한 최단거리 보다 지금 구한 최단거리가 같거나 작다면, 가능성이 있으므로 수행한다.
+                # 만약 이동한 위치에 대한 최단거리 보다 지금 구한 최단거리가 작다면, 가능성이 있으므로 수행한다.
                 if minDistanceList[nextRow][nextCol] > totalCost :
                     minDistanceList[nextRow][nextCol] = totalCost
                     heapq.heappush(priorityQueue, (totalCost, nextRow, nextCol))
