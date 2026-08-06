@@ -21,7 +21,6 @@
 
 # (0,0) -> (0, 2)
 # (1,0) -> (0, 1)
-# (2,0) -> (0, 2)
 
 # N이 인덱스이기 때문 
 # 열 (N - 1) - row
@@ -31,6 +30,8 @@
 
 # 열 (3 - 1) - 1 = 1
 # 행 col = 1
+
+## 2차 커밋, 불필요한 범위 탐색 및 성공 조건 가독성 높이기 
 
 def solution(key, lock):
     
@@ -53,11 +54,9 @@ def solution(key, lock):
             else :
                 LockBumps.add((row, col))                
     
-    
-    
     # 시작 위치 인덱스임 
     startRow = startCol = -keyEdgeLength + 1
-    endRow = endCol = lockEdgeLength + keyEdgeLength - 1
+    endRow = endCol = lockEdgeLength
     
     # 4방면 모두 검사하겠다. 
     for _ in range(4) :
@@ -75,11 +74,8 @@ def solution(key, lock):
                     
                     currentkeyBumps.add((nextBumpRow, nextBumpCol))
                 
-                result1 = LockBumps - currentkeyBumps
-                result2 = LockGrooves - currentkeyBumps
-                
 
-                if result1 == LockBumps and not result2 :
+                if (LockBumps.isdisjoint(currentkeyBumps) and LockGrooves.issubset(currentkeyBumps)):
                     return True
     
     return False
